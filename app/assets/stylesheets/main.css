@@ -1,4 +1,7 @@
-
+.panel-body {
+	height: 39em;
+	overflow-y: scroll;
+}
 
 
 .dropdown {
@@ -19,4 +22,9 @@
 .user2 {
 	background-color: #1428C4;
 	color: white;
+}
+
+.dl-horizontal dt {
+	width: 15em;
+	margin-right: 1em;
 }

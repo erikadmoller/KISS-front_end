@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	var userName = prompt('Please enter your name.');
+	// lastID = 0;
 
 	// Step 1: Test if you can recieve a message
 	// Use .get to retrieve the message from the server (tiny.pizza)
@@ -20,17 +21,21 @@ $(document).ready(function() {
 	// Step 2: Write function to display message from func. getMessages
 
 		var displayMessages = function(messages) {
-		var messageRow = _.template('<div class="well well-lg user1"><%= name %><%= time %><%= message %></div>')
+		var messageRow = _.template('<div class="well well-lg user1"><dl class="dl-horizontal"><dt><%= name %><%= time %></dt><dd><%= message %></dd></dl></div>')
 		$('.message-room').html('');
 			for( var i = 0; i < messages.length; i++) {
-				if(messages[i].message && messages[i].name && messages[i].time) {
-					console.log(messages);
+				// if(messages[i].id > lastID) {
+					// console.log(messages);
 					$('.message-room').append(messageRow(messages[i]));
-					$('.message-room').emoticonize();
+					// $('.message-room').emoticonize();
+					// lastID = messages[i].id;
+					// var audio = new Audio('http://myinstants.com/media/sounds/dun_dun_1.mp3');
+					// audio.play();
 				}
 			}
 			console.log(userName);
-		};
+
+		
 	
 	// Step 3: Write function (that will later need the click event) to .post (send) message from text input to the server. 
 
@@ -88,7 +93,7 @@ $(document).ready(function() {
 	  }
 
 	// Return the formatted string
-	  return date.join("/") + " " + time.join(":") + " " + suffix;
+	  return " " + date.join("/") + " " + time.join(":") + " " + suffix + " ";
 	}
 
 });
